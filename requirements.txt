@@ -4,3 +4,5 @@ appdirs
 pystache
 setuptools
 kaldi-helpers
+flask-socketio
+watchdog
