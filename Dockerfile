@@ -159,5 +159,5 @@ RUN pip3.6 install appdirs pystache && \
 
 ENTRYPOINT ["flask", "run", "--host", "0.0.0.0"]
 
-EXPOSE 5000:5000
+EXPOSE "5000:5000/tcp"
 EXPOSE 8008:8008
