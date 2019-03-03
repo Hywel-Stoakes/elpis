@@ -24,3 +24,7 @@ abui_toy_corpus/
 
 # mac files
 .DS_Store
+
+# Build artifacts
+/build
+/dist
