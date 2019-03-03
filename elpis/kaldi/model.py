@@ -30,7 +30,7 @@ class Model(FSObject):
         self.dataset: Dataset
         self.config['dataset_name'] = None  # dataset hash has not been linked
         self.config['l2s'] = None  # file has not been uploaded
-        self.config['ngram'] = 3
+        self.config['ngram'] = 1 # default to 1 to make playing quicker
         self.dataset = None
         self.config['status'] = 'untrained'
         self.status = 'untrained'
@@ -58,8 +58,11 @@ class Model(FSObject):
             fout.write(content)
 
     def get_l2s_content(self):
-        with self.l2s_path.open(mode='r') as fin:
-            return fin.read()
+        try:
+            with self.l2s_path.open(mode='r') as fin:
+                return fin.read()
+        except FileNotFoundError:
+            return 'No l2s yet'
 
     @property
     def status(self):
