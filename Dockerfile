@@ -135,8 +135,9 @@ RUN cd /tmp && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh
 
 WORKDIR /kaldi-helpers
 
-RUN echo "FLASK_ENV=development" >> ~/.bashrc
-RUN echo "FLASK_APP=elpis" >> ~/.bashrc
+RUN echo "OSH_THEME=powerline" >> ~/.bashrc
+RUN echo "export FLASK_ENV=development" >> ~/.bashrc
+RUN echo "export FLASK_APP=elpis" >> ~/.bashrc
 RUN echo "export LC_ALL=C.UTF-8" >> ~/.bashrc
 RUN echo "export LANG=C.UTF-8" >> ~/.bashrc
 
@@ -158,7 +159,7 @@ WORKDIR /elpis
 RUN pip3.6 install appdirs pystache && \
     pip3.6 install -r requirements.txt
 
-ENTRYPOINT ["flask", "run", "--host", "0.0.0.0"]
+# ENTRYPOINT ["flask", "run", "--host", "0.0.0.0"]
 
 EXPOSE 5000:5000
 EXPOSE 8008:8008
