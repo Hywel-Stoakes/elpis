@@ -106,4 +106,6 @@ def create_app(test_config=None):
 if __name__ == "__main__":
     app = create_app()
     socketio = SocketIO(app)
-    socketio.run(app)
+    socketio.run(app,
+                 host="0.0.0.0",
+                 port=5000)
