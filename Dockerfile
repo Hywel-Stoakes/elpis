@@ -135,7 +135,7 @@ RUN cd /tmp && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh
 
 WORKDIR /kaldi-helpers
 
-RUN echo "OSH_THEME=powerline" >> ~/.bashrc
+RUN echo "OSH_THEME='powerline'" >> ~/.bashrc
 RUN echo "export FLASK_ENV=development" >> ~/.bashrc
 RUN echo "export FLASK_APP=elpis" >> ~/.bashrc
 RUN echo "export LC_ALL=C.UTF-8" >> ~/.bashrc
